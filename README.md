@@ -27,5 +27,5 @@ The generator uses at most 7 cores.
 This generator is written by [chenzhitong](https://github.com/chenzhitong), who is one core developer of NEO,
 and the source code is from [AntsharesTools](https://github.com/chenzhitong/AntsharesTools).
 
-The generator do not record any address or key generated. 
+The generator does not record any address or key generated. 
 If you doubt it, then have someone review the code or don't use it.
