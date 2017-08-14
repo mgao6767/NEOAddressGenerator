@@ -1,0 +1,33 @@
+﻿<Window x:Class="AddressGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Loaded="Window_Loaded"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" FontFamily="Arial"
+        xmlns:local="clr-namespace:AddressGenerator" Title="NEO Vanity Address Generator" Closed="Window_Closed"
+        mc:Ignorable="d" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Padding="10 5" Background="Azure" Click="Button_Click">Start</Button>
+            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Length_Click">Length disabled</Button>
+            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Uppercase_Click">Uppercase disbled</Button>
+            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Startwith_Click">StartWith disabled</Button>
+            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Endwith_Click">EndWith disabled</Button>
+            <Button Margin="5" Padding="10 5" BorderBrush="Azure"  Click="Button_Contains_Click">Contains disabled</Button>
+        </StackPanel>
+        <DataGrid Grid.Row="1" FontSize="15" Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Address" Width="1*" FontSize="16" Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Private Key" Width="2*" FontSize="16"  Binding="{Binding Privatekey}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StatusBar Grid.Row="2">
+            <TextBlock>CPU Cores：</TextBlock><TextBlock Name="textProcessorCount"></TextBlock>
+            <TextBlock>Working Threads：</TextBlock><TextBlock Name="textThreadCount">0</TextBlock>
+        </StatusBar>
+    </Grid>
+</Window>
