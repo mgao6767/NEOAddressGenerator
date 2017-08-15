@@ -17,11 +17,11 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
             <Button Margin="5" Padding="10 5" Background="Azure" Click="Button_Click">Start</Button>
-            <CheckBox Margin="5" Padding="10 5" Checked="Length_Checked" VerticalContentAlignment="Center">ShortLength</CheckBox>
-            <CheckBox Margin="5" Padding="10 5" Checked="Uppercase_Checked" VerticalContentAlignment="Center">LessUppercase</CheckBox>
-            <CheckBox Margin="5" Padding="10 5" Checked="StartWith_Checked" VerticalContentAlignment="Center">StartWith</CheckBox>
-            <CheckBox Margin="5" Padding="10 5" Checked="EndWith_Checked" VerticalContentAlignment="Center">EndWith</CheckBox>
-            <CheckBox Margin="5" Padding="10 5" Checked="Contains_Checked" VerticalContentAlignment="Center">Contains</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="Length_Checked" Unchecked="Length_Unchecked" VerticalContentAlignment="Center">ShortLength</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="Uppercase_Checked" Unchecked="Uppercase_Unchecked" VerticalContentAlignment="Center">LessUppercase</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="StartWith_Checked" Unchecked="StartWith_Unchecked" VerticalContentAlignment="Center">StartWith</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="EndWith_Checked" Unchecked="EndWith_Unchecked" VerticalContentAlignment="Center">EndWith</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="Contains_Checked" Unchecked="Contains_Unchecked" VerticalContentAlignment="Center">Contains</CheckBox>
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
             <TextBlock Margin="10" VerticalAlignment="Center">Requirements:</TextBlock>
             <RadioButton Margin="5" Padding="10 5" Checked="MeetAny_Checked" IsChecked="True" VerticalContentAlignment="Center">Any</RadioButton>

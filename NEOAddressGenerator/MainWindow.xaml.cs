@@ -142,12 +142,30 @@ namespace AddressGenerator
             }
         }
 
+        private void StartWith_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (pause)
+            {
+                requireStartWith = false;
+                startWith = new string[] { };
+            }
+        }
+
         private void EndWith_Checked(object sender, RoutedEventArgs e)
         {
             if (pause)
             {
                 requireEndWith = requireEndWith ? false : true;
                 endWith = File.ReadAllLines("EndWith.txt");
+            }
+        }
+
+        private void EndWith_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (pause)
+            {
+                requireEndWith = false;
+                endWith = new string[] { };
             }
         }
 
@@ -160,12 +178,30 @@ namespace AddressGenerator
             }
         }
 
+        private void Contains_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (pause)
+            {
+                requireContains = false;
+                contains = new string[] { };
+            }
+        }
+
         private void Length_Checked(object sender, RoutedEventArgs e)
         {
             if (pause)
             {
                 requireLength = requireLength ? false : true;
                 goodLength = Convert.ToInt32(File.ReadAllText("GoodLength.txt"));
+            }
+        }
+
+        private void Length_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (pause)
+            {
+                requireLength = false;
+                goodLength = 0xffff;
             }
         }
 
@@ -178,6 +214,15 @@ namespace AddressGenerator
             }
         }
 
+        private void Uppercase_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (pause)
+            {
+                requireUppercase = false;
+                uppercase = 0xffff;
+            }
+        }
+        
         private void MeetAll_Checked(object sender, RoutedEventArgs e)
         {
             if (pause)
