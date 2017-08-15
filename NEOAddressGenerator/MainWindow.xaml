@@ -4,30 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Loaded="Window_Loaded"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" FontFamily="Arial"
         xmlns:local="clr-namespace:AddressGenerator" Title="NEO Vanity Address Generator" Closed="Window_Closed"
-        mc:Ignorable="d" Height="600" Width="800">
+        mc:Ignorable="d" Height="600" Width="850">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="391*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
             <Button Margin="5" Padding="10 5" Background="Azure" Click="Button_Click">Start</Button>
-            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Length_Click">Length disabled</Button>
-            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Uppercase_Click">Uppercase disbled</Button>
-            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Startwith_Click">StartWith disabled</Button>
-            <Button Margin="5" Padding="10 5" BorderBrush="Azure" Click="Button_Endwith_Click">EndWith disabled</Button>
-            <Button Margin="5" Padding="10 5" BorderBrush="Azure"  Click="Button_Contains_Click">Contains disabled</Button>
+            <CheckBox Margin="5" Padding="10 5" Checked="Length_Checked" VerticalContentAlignment="Center">ShortLength</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="Uppercase_Checked" VerticalContentAlignment="Center">LessUppercase</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="StartWith_Checked" VerticalContentAlignment="Center">StartWith</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="EndWith_Checked" VerticalContentAlignment="Center">EndWith</CheckBox>
+            <CheckBox Margin="5" Padding="10 5" Checked="Contains_Checked" VerticalContentAlignment="Center">Contains</CheckBox>
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            <TextBlock Margin="10" VerticalAlignment="Center">Requirements:</TextBlock>
+            <RadioButton Margin="5" Padding="10 5" Checked="MeetAny_Checked" IsChecked="True" VerticalContentAlignment="Center">Any</RadioButton>
+            <RadioButton Margin="5" Padding="10 5" Checked="MeetAll_Checked" IsChecked="False" VerticalContentAlignment="Center">All</RadioButton>
+
+
         </StackPanel>
-        <DataGrid Grid.Row="1" FontSize="15" Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding}">
+        <DataGrid Grid.Row="1" FontSize="13" Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding}" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Address" Width="1*" FontSize="16" Binding="{Binding Address}"/>
-                <DataGridTextColumn Header="Private Key" Width="2*" FontSize="16"  Binding="{Binding Privatekey}"/>
+                <DataGridTextColumn Header="Address" Width="2*" FontSize="13" Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Private Key" Width="2*" FontSize="13"  Binding="{Binding Privatekey}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StatusBar Grid.Row="2">
-            <TextBlock>CPU Cores：</TextBlock><TextBlock Name="textProcessorCount"></TextBlock>
-            <TextBlock>Working Threads：</TextBlock><TextBlock Name="textThreadCount">0</TextBlock>
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBlock>Status: </TextBlock>
+            <TextBlock Name="textWorkingStatus">Paused</TextBlock>
+            <TextBlock>Working Threads: </TextBlock>
+            <TextBlock Name="textThreadCount">0</TextBlock>
+            <TextBlock>CPU Cores: </TextBlock>
+            <TextBlock Name="textProcessorCount"></TextBlock>
         </StatusBar>
     </Grid>
 </Window>

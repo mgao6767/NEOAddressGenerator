@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AntSharesCore, Version=1.0.6138.38362, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -105,6 +108,7 @@
   <ItemGroup>
     <Content Include="AntSharesCore.dll" />
     <Content Include="bin\Debug\AntSharesCore.dll" />
+    <Resource Include="logo.ico" />
     <Resource Include="bin\Debug\contains.txt" />
     <Resource Include="bin\Debug\endWith.txt" />
     <Resource Include="bin\Debug\goodLength.txt" />
