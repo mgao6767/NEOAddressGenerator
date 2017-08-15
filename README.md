@@ -11,6 +11,10 @@ It generates the NEO address and corresponding private key of the address.
 * **Uppercase**: The address generated contains less than specified number of uppercase characters.
 * **Length**: The address generated is shorter than specified length.
 
+## Simple UI
+
+![Main View](/mainview.jpg)
+
 ## Usage:
 
 1. Simply enter your desired characters in the .txt files and run the program. 
