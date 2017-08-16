@@ -30,6 +30,8 @@ The wallet will automatically include the address as a standard account.
 
 ## Notice:
  
+* Pause the generator before changing requirements or it will not work.
+
 * To prevent freezing, the generator by default uses N-1 cores, where N is the number of CPU cores. 
 The generator uses at most 7 cores.
 
