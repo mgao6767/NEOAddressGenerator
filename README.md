@@ -52,3 +52,5 @@ and the source code is from [AntsharesTools](https://github.com/chenzhitong/Ants
 ## Tip:
 
 NEO/GAS: ```ALove5jQrmZjK63ozq4BtfNzcbzJemHECK```
+
+This is of course an address generated using this generator, starting with ```ALove```. But I've no idea why the HECK it ends with ```HECK```.
